@@ -13,6 +13,7 @@
 | 04 | [Agent 的要素](./04-agent-elements.md) | 模型 + 工具 + 循环 + 上下文 + 指令 |
 | 05 | [记忆 Memory](./05-memory.md) | API 无状态，记忆 = 每次重发历史消息 |
 | 06 | [多工具与工具选择](./06-multi-tool.md) | description 是模型选工具的唯一依据 |
+| 07 | [健壮性与日志](./07-robustness-and-logging.md) | 超时+重试+缓存抗抖动；日志全走 stderr |
 
 ## 核心一句话
 
@@ -25,7 +26,8 @@
 - 笔记 01~04 → `packages/01-minimal-agent/`（最小 Agent，不再修改）
 - 笔记 05 → `packages/02-agent-with-memory/`（会话级记忆）
 - 笔记 06 → `packages/03-multi-tool/`（多工具与工具选择）
-- 后续升级新开 `packages/04-xxx/` 等目录，旧快照保留，保证引用始终有效
+- 笔记 07 → `packages/04-robust-agent/`（重试/超时/缓存/日志）
+- 后续升级新开 `packages/05-xxx/` 等目录，旧快照保留，保证引用始终有效
 
 ## 后续可实践的方向
 
@@ -33,5 +35,5 @@
 - [x] 增加第二个工具（如"未来 7 天预报"），观察模型的工具选择行为 → [笔记 06](./06-multi-tool.md)
 - [ ] 对比 `tool_choice` 各取值的实际行为差异
 - [ ] 上下文压缩：记忆只增不减，如何截断/摘要以控制 token 成本
-- [ ] 工具调用的重试、超时与降级（并行调用会放大瞬时故障）
+- [x] 工具调用的重试、超时与降级（并行调用会放大瞬时故障）→ [笔记 07](./07-robustness-and-logging.md)
 - [ ] 尝试迁移到 Claude API 或引入 LangChain，对比手写循环与框架的差异

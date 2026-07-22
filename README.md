@@ -45,9 +45,18 @@ npm run weather -- "杭州现在的天气怎么样？"
 
 - `01-minimal-agent/`：最小 Agent 实现。`notes/01~04` 中的代码引用全部指向此目录，不再修改
 - `02-agent-with-memory/`：会话级记忆（`createAgent` + 闭包 messages）。对应 `notes/05`
-- `03-multi-tool/`：多工具与工具选择（新增 `get_forecast`，工具分发表，错误喂回模型）。对应 `notes/06`，`npm start` 默认运行此版本
-- 后续升级（上下文压缩、重试降级等）新开 `04-xxx/` 目录，旧快照保留，保证笔记引用始终有效
+- `03-multi-tool/`：多工具与工具选择（新增 `get_forecast`，工具分发表，错误喂回模型）。对应 `notes/06`
+- `04-robust-agent/`：健壮性与日志（超时、重试、地理编码缓存、分级日志）。对应 `notes/07`，`npm start` 默认运行此版本
+- 后续升级（上下文压缩等）新开 `05-xxx/` 目录，旧快照保留，保证笔记引用始终有效
 
-旧版本可用 `npm run start:01`、`npm run start:02` 运行。
+旧版本可用 `npm run start:01`、`npm run start:02`、`npm run start:03` 运行。
+
+## 日志
+
+v4 起内置分级日志（输出到 stderr）：
+
+```bash
+AGENT_LOG_LEVEL=debug npm start   # 查看 HTTP 请求、token 用量、工具结果原文
+```
 
 暂时没有使用 LangChain。先读懂 `packages/01-minimal-agent/agent.js` 中的 `messages`、`tool_calls` 和 `role: "tool"`，再引入框架会更容易理解。
