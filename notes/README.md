@@ -14,6 +14,7 @@
 | 05 | [记忆 Memory](./05-memory.md) | API 无状态，记忆 = 每次重发历史消息 |
 | 06 | [多工具与工具选择](./06-multi-tool.md) | description 是模型选工具的唯一依据 |
 | 07 | [健壮性与日志](./07-robustness-and-logging.md) | 超时+重试+缓存抗抖动；日志全走 stderr |
+| 08 | [工具选择的信号层级](./08-tool-selection-signals.md) | description 是主力，system prompt 只管策略，tool_choice 是硬约束 |
 
 ## 核心一句话
 
