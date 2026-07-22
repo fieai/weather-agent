@@ -5,8 +5,10 @@
   "type": "module",
   "description": "A minimal Node.js weather Agent with tool calling",
   "scripts": {
-    "start": "node packages/01-minimal-agent/index.js",
-    "weather": "node packages/01-minimal-agent/index.js"
+    "start": "node packages/02-agent-with-memory/index.js",
+    "start:01": "node packages/01-minimal-agent/index.js",
+    "start:02": "node packages/02-agent-with-memory/index.js",
+    "weather": "node packages/02-agent-with-memory/index.js"
   },
   "engines": {
     "node": ">=20"

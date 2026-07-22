@@ -11,6 +11,7 @@
 | 02 | [循环体现在哪里](./02-the-loop.md) | `agent.js` 的 for 循环让工具结果回流给模型，形成闭环 |
 | 03 | [tool_choice 参数](./03-tool-choice.md) | `"auto"` 把"调不调工具"的决策权交给模型 |
 | 04 | [Agent 的要素](./04-agent-elements.md) | 模型 + 工具 + 循环 + 上下文 + 指令 |
+| 05 | [记忆 Memory](./05-memory.md) | API 无状态，记忆 = 每次重发历史消息 |
 
 ## 核心一句话
 
@@ -21,11 +22,13 @@
 笔记中的代码引用指向 `packages/` 下**冻结的版本快照**：
 
 - 笔记 01~04 → `packages/01-minimal-agent/`（最小 Agent，不再修改）
-- 后续升级新开 `packages/02-xxx/` 等目录，旧快照保留，保证引用始终有效
+- 笔记 05 → `packages/02-agent-with-memory/`（会话级记忆）
+- 后续升级新开 `packages/03-xxx/` 等目录，旧快照保留，保证引用始终有效
 
 ## 后续可实践的方向
 
-- [ ] 给 CLI 加多轮对话记忆（把 messages 提升到会话级，而非每次 `runAgent` 重建）
+- [x] 给 CLI 加多轮对话记忆（把 messages 提升到会话级，而非每次 `runAgent` 重建）→ [笔记 05](./05-memory.md)
 - [ ] 增加第二个工具（如"未来 7 天预报"），观察模型的工具选择行为
 - [ ] 对比 `tool_choice` 各取值的实际行为差异
+- [ ] 上下文压缩：记忆只增不减，如何截断/摘要以控制 token 成本
 - [ ] 尝试迁移到 Claude API 或引入 LangChain，对比手写循环与框架的差异

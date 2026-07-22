@@ -43,7 +43,10 @@ npm run weather -- "杭州现在的天气怎么样？"
 
 `packages/` 下每个目录是一个**冻结的代码快照**，对应学习进程的一个阶段：
 
-- `01-minimal-agent/`：最小 Agent 实现（当前）。`notes/01~04` 中的代码引用全部指向此目录，不再修改
-- 后续升级（记忆、多工具等）新开 `02-xxx/` 目录，旧快照保留，保证笔记引用始终有效
+- `01-minimal-agent/`：最小 Agent 实现。`notes/01~04` 中的代码引用全部指向此目录，不再修改
+- `02-agent-with-memory/`：会话级记忆（`createAgent` + 闭包 messages）。对应 `notes/05`，`npm start` 默认运行此版本
+- 后续升级（多工具、上下文压缩等）新开 `03-xxx/` 目录，旧快照保留，保证笔记引用始终有效
+
+旧版本可用 `npm run start:01` 运行。
 
 暂时没有使用 LangChain。先读懂 `packages/01-minimal-agent/agent.js` 中的 `messages`、`tool_calls` 和 `role: "tool"`，再引入框架会更容易理解。
