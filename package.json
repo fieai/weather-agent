@@ -5,8 +5,8 @@
   "type": "module",
   "description": "A minimal Node.js weather Agent with tool calling",
   "scripts": {
-    "start": "node src/index.js",
-    "weather": "node src/index.js"
+    "start": "node packages/01-minimal-agent/index.js",
+    "weather": "node packages/01-minimal-agent/index.js"
   },
   "engines": {
     "node": ">=20"

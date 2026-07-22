@@ -1,6 +1,8 @@
 # 02 · 循环体现在哪里？
 
-循环在 `src/agent.js:47-90` 的 `for` 循环，构成 **"模型 → 工具 → 模型"** 的往返：
+> 代码快照：`packages/01-minimal-agent/`（v1，冻结不修改，下文所有 `agent.js` 引用均指向此目录）
+
+循环在 `packages/01-minimal-agent/agent.js:47-90` 的 `for` 循环，构成 **"模型 → 工具 → 模型"** 的往返：
 
 ```javascript
 for (let step = 0; step < 5; step += 1) {        // 循环入口，最多 5 轮

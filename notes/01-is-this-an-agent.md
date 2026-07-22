@@ -1,5 +1,7 @@
 # 01 · 这个项目是 Agent 吗？
 
+> 代码快照：`packages/01-minimal-agent/`（v1，冻结不修改，下文所有 `agent.js` / `weather.js` 引用均指向此目录）
+
 **是，是一个最小但真正的 Agent。**
 
 ## 判断标准
@@ -11,7 +13,7 @@
 
 ## Agent 要素对照
 
-核心实现在 `src/agent.js` 的 `runAgent()`：
+核心实现在 `packages/01-minimal-agent/agent.js` 的 `runAgent()`：
 
 | Agent 要素 | 对应代码 |
 |---|---|

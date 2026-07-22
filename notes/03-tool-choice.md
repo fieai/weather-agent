@@ -1,5 +1,7 @@
 # 03 · tool_choice 参数详解
 
+> 代码快照：`packages/01-minimal-agent/`（v1，冻结不修改，下文所有 `agent.js` 引用均指向此目录）
+
 `tool_choice` 告诉模型**"这一轮要不要用工具、必须用哪个"**。本项目设为 `"auto"`（`agent.js:52`）。
 
 ## 可选取值
